@@ -1,3 +1,8 @@
+// Creating our function that changes the background color of the page
+function change_color() {
+    document.body.style.backgroundColor = 'lightblue';
+}
+
 // Pretty self explanetory function here, it creates and element and sets the inner text
 function click_me() {
     var inject = document.createElement('p')
@@ -5,7 +10,7 @@ function click_me() {
 }
 // Also a basic function that changes the hove item(image) width, it also looks terrible
 function hover_me() {
-    hover_item.style.width = '400px';
+    hover_item.style.width = '300px';
 }
 // Creating our parent variable and setting it so we can append it later
 var parent_container = document.getElementById('page_container');
@@ -62,11 +67,12 @@ document.addEventListener("keydown", (evt) => {
     }
 
 });
-
-
+// Using our settimeout to change the color after 15 seconds
+setTimeout(change_color, 15000)
 // Event listener that changes the body background when spacebar is pressed
+
 document.body.addEventListener('keyup', event => {
     if (event.code === 'Space') {
-        body.style.background = "pink";
+        parent_container.style.background = "pink";
     }
 });
