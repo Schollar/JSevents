@@ -2,7 +2,25 @@
 function change_color() {
     document.body.style.backgroundColor = 'lightblue';
 }
+// Creating our function that moves the element based on the number it gets from math random
+function change_page_element() {
+    // here we set math random to a number between 1 and 4
+    var number = Math.random() * (4 - 1) + 1;
+    // And then check the number and move element around accordingly
+    if (number <= 2) {
+        clicked_item.style.top = '150px';
+        clicked_item.style.left = '150px';
+    } else if (number <= 3) {
+        clicked_item.style.top = '25px';
+        clicked_item.style.left = '25px';
+    } else if (number <= 4) {
+        clicked_item.style.top = '50px';
+        clicked_item.style.left = '50px';
+    } else {
+        console.log('Uh-oh something went wrong!');
+    }
 
+}
 // Pretty self explanetory function here, it creates and element and sets the inner text
 function click_me() {
     var inject = document.createElement('p')
@@ -33,7 +51,6 @@ var clicked_e_array = [];
 
 
 // Adding eventlistener on keydown, checking the event keys and re storing according variable to true
-// I have no else statement on this, but i dont know what i would really be catching or elseing here.
 document.addEventListener("keydown", (event) => {
     if (event.key === 's') {
         clicked_s = true;
@@ -46,6 +63,8 @@ document.addEventListener("keydown", (event) => {
         clicked_r = true;
     } else if (event.key === 't') {
         clicked_t = true;
+    } else {
+        console.log('This shouldnt be here!')
     }
 
     // Here we have two if statements to check if the first two index numbers of the array are e, if they are turn the according
@@ -53,9 +72,13 @@ document.addEventListener("keydown", (event) => {
     // -since there is only two 'e' in our secret message.
     if (clicked_e_array[0] === 'e') {
         clicked_e = true;
+    } else {
+        console.log('Whoops');
     }
     if (clicked_e_array[1] === 'e') {
         clicked_e_twice = true;
+    } else {
+        console.log('Oh no!')
     }
 
     // And finally we check to see if all our variables are now true, if so we create and display our secret message
@@ -67,9 +90,10 @@ document.addEventListener("keydown", (event) => {
 
 });
 // Using our settimeout to change the color after 15 seconds
-setTimeout(change_color, 15000)
+setTimeout(change_color, 15000);
+// Set interval to call our change page element every 3 seconds(3000ms)
+setInterval(change_page_element, 3000);
 // Event listener that changes the body background when spacebar is pressed
-
 document.body.addEventListener('keyup', event => {
     if (event.code === 'Space') {
         parent_container.style.background = "pink";
