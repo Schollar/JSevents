@@ -10,7 +10,7 @@ function click_me() {
 }
 // Also a basic function that changes the hove item(image) width, it also looks terrible
 function hover_me() {
-    hover_item.style.width = '300px';
+    hover_item.style.width = '3 00px';
 }
 // Creating our parent variable and setting it so we can append it later
 var parent_container = document.getElementById('page_container');
@@ -34,18 +34,18 @@ var clicked_e_array = [];
 
 // Adding eventlistener on keydown, checking the event keys and re storing according variable to true
 // I have no else statement on this, but i dont know what i would really be catching or elseing here.
-document.addEventListener("keydown", (evt) => {
-    console.log(evt.key);
+document.addEventListener("keydown", (event) => {
+    console.log(event.key);
     if (evt.key === 's') {
         clicked_s = true;
         // Here we push our 'e' presses to our empty variable to check them later
-    } else if (evt.key === 'e') {
+    } else if (event.key === 'e') {
         clicked_e_array.push('e');
-    } else if (evt.key === 'c') {
+    } else if (event.key === 'c') {
         clicked_c = true;
-    } else if (evt.key === 'r') {
+    } else if (event.key === 'r') {
         clicked_r = true;
-    } else if (evt.key === 't') {
+    } else if (event.key === 't') {
         clicked_t = true;
     }
 
