@@ -35,8 +35,7 @@ var clicked_e_array = [];
 // Adding eventlistener on keydown, checking the event keys and re storing according variable to true
 // I have no else statement on this, but i dont know what i would really be catching or elseing here.
 document.addEventListener("keydown", (event) => {
-    console.log(event.key);
-    if (evt.key === 's') {
+    if (event.key === 's') {
         clicked_s = true;
         // Here we push our 'e' presses to our empty variable to check them later
     } else if (event.key === 'e') {
