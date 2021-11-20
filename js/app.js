@@ -26,9 +26,9 @@ function click_me() {
     var inject = document.createElement('p')
     this.innerText = "You Clicked me!";
 }
-// Also a basic function that changes the hove item(image) width, it also looks terrible
+// Also a basic function that changes the hover item(image) width, it also looks terrible
 function hover_me() {
-    hover_item.style.width = '3 00px';
+    hover_item.style.width = '300px';
 }
 // Creating our parent variable and setting it so we can append it later
 var parent_container = document.getElementById('page_container');
@@ -46,7 +46,7 @@ var clicked_c = false;
 var clicked_r = false;
 var clicked_e_twice = false;
 var clicked_t = false;
-// Here we creat an array because we have 2 'e' in our secret word so we need to check for it twice, this is just how I got it to work, im sure theres a better way
+// Here we create an array because we have 2 'e' in our secret word so we need to check for it twice, this is just how I got it to work, im sure theres a better way
 var clicked_e_array = [];
 
 
@@ -56,7 +56,10 @@ document.addEventListener("keydown", (event) => {
         clicked_s = true;
         // Here we push our 'e' presses to our empty variable to check them later
     } else if (event.key === 'e') {
-        clicked_e_array.push('e');
+
+        if (clicked_e_array.length < 2) {
+            clicked_e_array.push('e');
+        }
     } else if (event.key === 'c') {
         clicked_c = true;
     } else if (event.key === 'r') {
